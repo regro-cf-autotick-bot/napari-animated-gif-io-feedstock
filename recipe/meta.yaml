@@ -1,5 +1,5 @@
 {% set name = "napari-animated-gif-io" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-animated-gif-io-{{ version }}.tar.gz
-  sha256: 67fbfb16c12a54518995058dfd587d0fb4ca247a57c3d0ed5ec6f58dabb9e4d8
+  sha256: ab9a3af2f74fd0eb63d99a94cade0a11da8f96dc1307161ec1b755bc815ac540
 
 build:
   noarch: python
