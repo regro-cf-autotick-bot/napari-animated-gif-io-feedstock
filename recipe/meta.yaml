@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-animated-gif-io-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari-animated-gif-io-{{ version }}.tar.gz
   sha256: ab9a3af2f74fd0eb63d99a94cade0a11da8f96dc1307161ec1b755bc815ac540
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - imageio
     - microfilm
@@ -25,7 +25,7 @@ requirements:
     - napari-plugin-engine >=0.1.4
     - napari-tools-menu
     - numpy
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/haesleinhuepf/napari-animated-gif-io
